@@ -1,0 +1,128 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 10%;
+  background-image: linear-gradient(#555, #000);
+  color: #fff;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  z-index: 1;
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(
+      0 0,
+      50% 6rem,
+      100% 0,
+      100% 100%,
+      50% calc(100% - 6rem),
+      0 100%
+    );
+    clip-path: polygon(
+      0 0,
+      50% 6rem,
+      100% 0,
+      100% 100%,
+      50% calc(100% - 6rem),
+      0 100%
+    );
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: "Merriweather Sans", sans-serif;
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+  }
+
+  &__paragraph {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  &__link,
+  &__link:link,
+  &__link:active {
+    text-decoration: none;
+    color: #4e7af2;
+    font-weight: 700;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 4%;
+
+    &Section {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+    }
+
+    &Label {
+      position: absolute;
+      top: 2.5rem;
+      color: #000;
+      left: 5px;
+      height: 3rem;
+      font-size: 2rem;
+      transition: all 0.4s;
+    }
+
+    &Input:focus + &Label {
+      top: 0;
+      font-size: 1.5rem;
+      color: #4e7af2;
+    }
+
+    &Input {
+      width: 100%;
+      font-size: 2rem;
+      margin-top: 3rem;
+      border-radius: 6px;
+    }
+
+    &Message {
+      height: 15vh;
+      font-size: 2rem;
+      margin-top: 3rem;
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    &Message:focus + &Label {
+      top: 0;
+      font-size: 1.5rem;
+      color: #4e7af2;
+    }
+
+    &SubmitButton {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-top: 4rem;
+      padding: 1rem 3rem;
+      border-radius: 100px;
+      color: #fff;
+      background-color: #4e7af2;
+      border: none;
+      transition: all 0.5s;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 5px 6px rgba(255, 255, 255, 0.3);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: none;
+      }
+    }
+  }
+}

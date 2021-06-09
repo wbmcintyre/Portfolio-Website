@@ -1,0 +1,28 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.8);
+
+  &__text {
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  &__title {
+    color: rgb(241, 239, 64);
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: "Roboto Slab", serif;
+  }
+
+  &__description {
+    font-size: 3rem;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+  }
+}

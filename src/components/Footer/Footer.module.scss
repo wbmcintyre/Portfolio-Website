@@ -1,0 +1,53 @@
+.footer {
+  position: relative;
+
+  &__linkTop {
+    position: absolute;
+    top: calc(100% - 6rem);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    color: #000;
+    background-color: #3d5aa6;
+    z-index: 5;
+    padding: 0.25rem 1em;
+    border-radius: 7px;
+    transition: all 0.25s;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &__linksContainer {
+    position: absolute;
+    top: calc(100% - 6rem);
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    background-color: #333;
+  }
+
+  &__links {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__linkLinkedIn,
+  &__linkGithub {
+    color: #000;
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 3px;
+    margin: 3rem;
+    margin-top: 4rem;
+    transition: all 0.3s;
+
+    &:hover {
+      color: #fff;
+      background-color: #3d5aa6;
+    }
+  }
+}
