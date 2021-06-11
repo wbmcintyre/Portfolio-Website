@@ -54,6 +54,7 @@ class Portfolio extends React.Component {
     return Projects.map((project) => {
       return (
         <Project
+          key={project.name}
           name={project.name}
           about={project.about}
           image={project.image}
@@ -78,12 +79,3 @@ class Portfolio extends React.Component {
 }
 
 export default Portfolio;
-
-{
-  /* <Project
-            name="awfjleajf"
-            about="stuff used"
-            image="image for display"
-            src="source"
-          /> */
-}

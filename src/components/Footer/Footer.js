@@ -7,7 +7,7 @@ const Footer = () => {
     <div className={style.footer}>
       <Contact />
       <a className={style.footer__linkTop} href="#home">
-        <i class="fas fa-angle-double-up fa-4x"></i>
+        <i className="fas fa-angle-double-up fa-4x"></i>
       </a>
       <div className={style.footer__linksContainer}>
         <div className={style.footer__links}>
@@ -15,15 +15,17 @@ const Footer = () => {
             className={style.footer__linkLinkedIn}
             href="https://www.linkedin.com/in/wbmcintyre/"
             target="_blank"
+            rel="noopener noreferrer"
           >
-            <i class="fab fa-linkedin-in fa-3x"></i>
+            <i className={`${style.footer__icon} fab fa-linkedin-in fa-3x`}></i>
           </a>
           <a
             className={style.footer__linkGithub}
             href="https://github.com/wbmcintyre"
             target="_blank"
+            rel="noopener noreferrer"
           >
-            <i class="fab fa-github fa-3x"></i>
+            <i className={`${style.footer__icon} fab fa-github fa-3x`}></i>
           </a>
         </div>
       </div>

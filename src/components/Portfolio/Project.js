@@ -28,20 +28,25 @@ class Project extends React.Component {
   render() {
     return (
       <section ref={this.projectRef} className={style.project}>
-        <img
-          className={style.project__image}
-          src={this.props.image}
-          alt={`${this.props.name} project image`}
-        />
         <div className={style.project__hidden}>
           <div className={style.project__description}>
             <h4 className={style.project__title}>{this.props.name}</h4>
             <p className={style.project__about}>{this.props.about}</p>
           </div>
-          <a className={style.project__link} href={this.props.src}>
+          <a
+            className={style.project__link}
+            href={this.props.src}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Learn more
           </a>
         </div>
+        <img
+          className={style.project__image}
+          src={this.props.image}
+          alt={`${this.props.name} project`}
+        />
       </section>
     );
   }

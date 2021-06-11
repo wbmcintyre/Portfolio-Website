@@ -1,8 +1,10 @@
 @import "../../styles/config/animations";
 
 .portfolio {
-  padding: 3% 10%;
+  padding: 3% 10% 5% 10%;
   background-color: #fff;
+  position: relative;
+  z-index: 10;
 
   &__title {
     width: 100%;
@@ -13,12 +15,38 @@
     text-align: center;
     text-transform: uppercase;
     opacity: 1;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 4px;
+      background-color: currentColor;
+    }
 
     &Animate {
       animation: moveInRight 1s ease-out;
+
+      &::after {
+        animation: moveInRightAfter 2s ease-out;
+      }
     }
   }
 
   &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+
+    & > * {
+      width: 100%;
+      height: 100%;
+      overflow: none;
+    }
   }
 }

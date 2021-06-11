@@ -11,9 +11,9 @@
     width: 100%;
     font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 5rem;
     text-align: center;
     opacity: 1;
+    font-family: "Merriweather Sans", sans-serif;
 
     &Animate {
       animation: moveInLeft 1s ease-out;
@@ -27,6 +27,7 @@
     grid-column-gap: 3rem;
     grid-row-gap: 1rem;
     margin: 0 3rem;
+    font-family: "Merriweather Sans", sans-serif;
   }
 
   &__bar {
@@ -35,6 +36,7 @@
     display: flex;
     border-radius: 2px;
     overflow: hidden;
+    color: #fff;
 
     &Name {
       height: 100%;
@@ -44,24 +46,24 @@
       font-size: 1.5rem;
       font-weight: 900;
       flex: 0 0 100px; //whatever fixed with based on names
-      background-color: #222;
-      color: #fff;
+      background-color: #4e5df2;
     }
 
     &Body {
       position: relative;
       height: 100%;
       width: 100%;
-      background-color: gray;
+      background-color: #888;
     }
 
     &Fill {
       height: 100%;
       font-weight: 900;
-      background-color: #345294;
+      background-color: #3d47a6;
       text-align: center;
       width: 0%;
       transition: all 2s;
+      transition-delay: 0.25s;
     }
 
     &Rating {

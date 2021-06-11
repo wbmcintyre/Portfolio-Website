@@ -4,15 +4,15 @@ import style from "./Skills.module.scss";
 const skillsArray = [
   {
     skill: "HTML5",
-    rating: "90%",
+    rating: "70%",
   },
   {
     skill: "CSS3",
-    rating: "80%",
+    rating: "70%",
   },
   {
     skill: "SASS",
-    rating: "80%",
+    rating: "70%",
   },
   {
     skill: "JAVASCRIPT",
@@ -20,35 +20,35 @@ const skillsArray = [
   },
   {
     skill: "REACT",
-    rating: "80%",
+    rating: "70%",
   },
   {
     skill: "REDUX",
-    rating: "70%",
+    rating: "60%",
   },
   {
     skill: "NODE JS",
-    rating: "70%",
+    rating: "50%",
   },
   {
     skill: "EXPRESS JS",
-    rating: "80%",
+    rating: "60%",
   },
   {
     skill: "MONGODB",
-    rating: "70%",
+    rating: "60%",
   },
   {
     skill: "SQL",
-    rating: "80%",
+    rating: "70%",
   },
   {
     skill: "C/C++",
-    rating: "80%",
+    rating: "70%",
   },
   {
     skill: "Java",
-    rating: "70%",
+    rating: "60%",
   },
   {
     skill: "Python",
@@ -60,22 +60,20 @@ class Skills extends React.Component {
   constructor(props) {
     super(props);
     this.sectionRef = React.createRef();
-    this.sectionTitle = React.createRef();
     this.skillRefs = [];
   }
 
   componentDidMount() {
     const applyLoadAnimations = (entries, observer) => {
-      const [entry] = entries;
-      if (!entry.isIntersecting) return;
-
-      //this.sectionTitle.current.classList.add(style.skills__titleAnimate);
-
-      this.skillRefs.forEach((skill) => {
-        const rating = skill.current.dataset.rating;
-        skill.current.style.width = rating;
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.skillRefs.forEach((skill) => {
+            const rating = skill.current.dataset.rating;
+            skill.current.style.width = rating;
+          });
+          observer.unobserve(entry.target);
+        }
       });
-      observer.unobserve(entry.target);
     };
 
     const sectionObserver = new IntersectionObserver(applyLoadAnimations, {
@@ -109,9 +107,9 @@ class Skills extends React.Component {
   render() {
     return (
       <section ref={this.sectionRef} className={style.skills}>
-        {/* <h2 ref={this.sectionTitle} className={style.skills__title}>
-          Skills
-        </h2> */}
+        <h2 ref={this.sectionTitle} className={style.skills__title}>
+          Proficiencies
+        </h2>
         <div ref={this.sectionContainer} className={style.skills__container}>
           {this.renderSkills()}
         </div>

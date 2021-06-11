@@ -1,3 +1,5 @@
+@import "../../styles/config/animations";
+
 .header {
   position: relative;
   display: flex;
@@ -11,6 +13,11 @@
     color: #fff;
     text-align: center;
     border-radius: 5px;
+    cursor: default;
+
+    &Animate {
+      animation: fadeIn 3s ease-out;
+    }
   }
 
   &__title {

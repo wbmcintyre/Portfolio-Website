@@ -26,6 +26,7 @@
     width: 100%;
     z-index: -1;
     background-color: #333;
+    padding-top: 6rem;
   }
 
   &__links {
@@ -41,8 +42,8 @@
     background-color: #fff;
     padding: 0.5rem;
     border-radius: 3px;
-    margin: 3rem;
-    margin-top: 4rem;
+    margin: 0 3rem;
+    margin-bottom: 3rem;
     transition: all 0.3s;
 
     &:hover {

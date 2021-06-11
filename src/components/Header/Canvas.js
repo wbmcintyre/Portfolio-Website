@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React from "react";
 import style from "./Canvas.module.scss";
 
 class Canvas extends React.Component {

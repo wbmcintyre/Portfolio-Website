@@ -18,7 +18,7 @@ class Contact extends React.Component {
       bodyNew = bodyNew + "\n\nFrom " + name + "\n";
     }
 
-    bodyNew = bodyNew + "\n Sent from Ben's Website"
+    bodyNew = bodyNew + "\n Sent from Ben's Website";
 
     var args = [];
     if (typeof subject !== "undefined") {
@@ -49,7 +49,15 @@ class Contact extends React.Component {
     return (
       <section className={style.contact} id="contact">
         <h2 className={style.contact__title}>Contact</h2>
-        <p className={style.contact__paragraph}>Feel free to send an e-mail to <a className={style.contact__link} href="mailto:wbmcintyre@outlook.com">wbmcintyre@outlook.com</a></p>
+        <p className={style.contact__paragraph}>
+          Feel free to send an e-mail to{" "}
+          <a
+            className={style.contact__link}
+            href="mailto:wbmcintyre@outlook.com"
+          >
+            wbmcintyre@outlook.com
+          </a>
+        </p>
         <form className={style.contact__form} onSubmit={this.handleSubmit}>
           <div className={style.contact__formSection}>
             <input
@@ -60,32 +68,33 @@ class Contact extends React.Component {
               required
               name="name"
             ></input>
-            <label for="name" className={style.contact__formLabel}>Name</label>
-            
+            <label htmlFor="name" className={style.contact__formLabel}>
+              Name
+            </label>
           </div>
           <div className={style.contact__formSection}>
-          
-          <input
-            className={style.contact__formInput}
-            onChange={this.handleChange}
-            type="text"
-            required
-            name="subject"
-          ></input>
-          <label for="name" className={style.contact__formLabel}>Subject</label>
-            
-            </div>
-            <div className={style.contact__formSection}>
-          
-          <textarea
-            className={style.contact__formMessage}
-            onChange={this.handleChange}
-            required
-            name="message"
-          ></textarea>
-          <label for="name" className={style.contact__formLabel}>Your Message</label>
-            
-            </div>
+            <input
+              className={style.contact__formInput}
+              onChange={this.handleChange}
+              type="text"
+              required
+              name="subject"
+            ></input>
+            <label htmlFor="name" className={style.contact__formLabel}>
+              Subject
+            </label>
+          </div>
+          <div className={style.contact__formSection}>
+            <textarea
+              className={style.contact__formMessage}
+              onChange={this.handleChange}
+              required
+              name="message"
+            ></textarea>
+            <label htmlFor="name" className={style.contact__formLabel}>
+              Your Message
+            </label>
+          </div>
           <button className={style.contact__formSubmitButton} type="submit">
             Send
           </button>
