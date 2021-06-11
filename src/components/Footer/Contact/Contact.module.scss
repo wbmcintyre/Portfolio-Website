@@ -1,3 +1,5 @@
+@import "../../../styles/config/animations";
+
 .contact {
   display: flex;
   flex-direction: column;
@@ -131,6 +133,11 @@
         transform: translateY(0);
         box-shadow: none;
       }
+    }
+
+    &Animate {
+      animation: popUp 1s ease-out;
+      animation-fill-mode: backwards;
     }
   }
 }

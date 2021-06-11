@@ -1,12 +1,14 @@
+@import "../../styles/config/animations";
+
 .project {
   position: relative;
-
+  opacity: 0;
   background-color: #000;
 
   &__image {
+    min-height: 100px;
     object-fit: fill;
     object-position: center top;
-    height: 100%;
     width: 100%;
     transition: all 1s;
   }
@@ -61,5 +63,8 @@
   }
 
   &Animate {
+    animation: moveInBottom 1s ease-out;
+    animation-fill-mode: backwards;
+    opacity: 1;
   }
 }

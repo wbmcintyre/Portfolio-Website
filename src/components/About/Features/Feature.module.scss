@@ -1,3 +1,5 @@
+@import "../../../styles/config/animations";
+
 .feature {
   display: flex;
   flex-direction: column;
@@ -17,5 +19,11 @@
   &__text {
     font-size: 1.5rem;
     color: #000;
+  }
+
+  &Animate {
+    animation: moveInLeft 1s ease-out;
+    animation-delay: 0.25s;
+    animation-fill-mode: backwards;
   }
 }

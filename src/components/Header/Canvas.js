@@ -35,44 +35,23 @@ class Canvas extends React.Component {
     });
 
     class Star {
-      constructor(x, y, vx, vy, spikes, innerRadius, outerRadius) {
+      constructor(x, y, vx, vy, radius) {
         this.x = x;
         this.y = y;
-        this.cx = x;
-        this.cy = y;
         this.vx = vx;
-        this.vy = outerRadius / 4;
-        this.spikes = spikes;
-        this.innerRadius = innerRadius;
-        this.outerRadius = outerRadius;
-        this.rot = (Math.PI / 2) * 3;
-        this.step = Math.PI / spikes;
+        this.vy = radius / 4;
+        this.radius = radius;
       }
 
       draw = () => {
         ctx.beginPath();
-        ctx.moveTo(this.x, this.y - this.outerRadius);
-        for (let i = 0; i < this.spikes; i++) {
-          this.cx = this.x + Math.cos(this.rot) * this.outerRadius;
-          this.cy = this.y + Math.sin(this.rot) * this.outerRadius;
-          ctx.lineTo(this.cx, this.cy);
-          this.rot += this.step;
-
-          this.cx = this.x + Math.cos(this.rot) * this.innerRadius;
-          this.cy = this.y + Math.sin(this.rot) * this.innerRadius;
-          ctx.lineTo(this.cx, this.cy);
-          this.rot += this.step;
-        }
-        ctx.lineTo(this.x, this.y - this.outerRadius);
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
         ctx.closePath();
-        ctx.lineWidth = 1;
-        ctx.strokeStyle = "white";
-        ctx.stroke();
         ctx.fillStyle = "white";
         ctx.fill();
 
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.outerRadius + 2.5, 0, Math.PI * 2, true);
+        ctx.arc(this.x, this.y, this.radius + 3, 0, Math.PI * 2, true);
         ctx.closePath();
 
         if (ctx.isPointInPath(mouse.x, mouse.y)) {
@@ -92,7 +71,7 @@ class Canvas extends React.Component {
         this.x = x;
         this.y = y;
         this.vx = vx;
-        this.vy = this.outerRadius / 4;
+        this.vy = this.radius / 4;
       }
 
       isOffScreen() {
@@ -115,7 +94,6 @@ class Canvas extends React.Component {
     for (let i = 0; i < 200; i++) {
       const randomX = Math.random();
       const randomY = Math.random();
-      const randomSpikes = Math.round(Math.random() * 5 + 10);
       const randomRadius = Math.round(Math.random());
 
       starArray.push(
@@ -124,8 +102,6 @@ class Canvas extends React.Component {
           randomY * document.documentElement.clientHeight,
           0,
           0,
-          randomSpikes,
-          randomRadius,
           randomRadius + randomX
         )
       );

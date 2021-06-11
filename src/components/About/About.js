@@ -7,13 +7,15 @@ import { applyLoadAnimation } from "../intersectionObserver";
 class About extends React.Component {
   constructor(props) {
     super(props);
-    this.aboutContainerRef = React.createRef();
     this.aboutTitleRef = React.createRef();
+    this.aboutTextRef = React.createRef();
+    this.aboutVisualRef = React.createRef();
   }
 
   componentDidMount() {
-    applyLoadAnimation(this.aboutContainerRef, style.about__containerAnimate);
     applyLoadAnimation(this.aboutTitleRef, style.about__titleAnimate);
+    applyLoadAnimation(this.aboutTextRef, style.about__textAnimate);
+    applyLoadAnimation(this.aboutVisualRef, style.about__visualAnimate);
   }
 
   render() {
@@ -23,10 +25,10 @@ class About extends React.Component {
           About
         </h2>
         <Features />
-        <div ref={this.aboutContainerRef} className={style.about__container}>
-          <div className={style.about__text}>
+        <div className={style.about__container}>
+          <div ref={this.aboutTextRef} className={style.about__text}>
             <p className={style.about__description}>
-              I'm a Software Developer with a Bachelors degree in robotics
+              I'm a Software Developer with a bachelors degree in robotics
               engineering. Web Development has become a specialty of mine over
               the past year. I wish to provide the best software solutions,
               regardless of industry. I treat my work as though it is a very
@@ -47,8 +49,7 @@ class About extends React.Component {
               about questions or for working together.
             </p>
           </div>
-          <div className={style.about__visual}>
-            {/* <img className={style.about__image} src={test} alt="filler"></img> */}
+          <div ref={this.aboutVisualRef} className={style.about__visual}>
             <Skills />
           </div>
         </div>

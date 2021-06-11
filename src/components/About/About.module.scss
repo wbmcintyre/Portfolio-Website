@@ -19,6 +19,7 @@
     font-family: "Merriweather Sans", sans-serif;
     text-transform: uppercase;
     position: relative;
+    opacity: 0;
 
     &::after {
       content: "";
@@ -29,15 +30,18 @@
       width: 50px;
       height: 4px;
       background-color: currentColor;
+      opacity: 0;
     }
 
     &Animate {
       animation: moveInLeft 1s ease-out;
       animation-fill-mode: backwards;
+      opacity: 1;
 
       &::after {
         animation: moveInLeftAfter 2s ease-out;
         animation-fill-mode: backwards;
+        opacity: 1;
       }
     }
   }
@@ -49,16 +53,18 @@
     & > * {
       width: 100%;
     }
-
-    &Animate {
-      animation: moveInBottom 1s ease-out;
-      animation-fill-mode: backwards;
-    }
   }
 
   &__text {
     padding: 2%;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    opacity: 0;
+
+    &Animate {
+      animation: moveInBottom 1s ease-out;
+      animation-fill-mode: backwards;
+      opacity: 1;
+    }
   }
 
   &__link,
@@ -107,5 +113,14 @@
 
   &__description {
     padding-bottom: 2rem;
+  }
+
+  &__visual {
+    opacity: 0;
+    &Animate {
+      animation: moveInBottom 1s ease-out;
+      animation-fill-mode: backwards;
+      opacity: 1;
+    }
   }
 }

@@ -14,9 +14,12 @@
     text-align: center;
     border-radius: 5px;
     cursor: default;
+    opacity: 0;
 
     &Animate {
       animation: fadeIn 3s ease-out;
+      animation-fill-mode: backwards;
+      opacity: 1;
     }
   }
 

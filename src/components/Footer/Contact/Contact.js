@@ -1,10 +1,16 @@
 import React from "react";
 import style from "./Contact.module.scss";
+import { applyLoadAnimation } from "../../intersectionObserver";
 
 class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.state = { name: "", subject: "", message: "" };
+    this.contactFormRef = React.createRef();
+  }
+
+  componentDidMount() {
+    applyLoadAnimation(this.contactFormRef, style.contact__formAnimate);
   }
 
   handleChange = (event) => {
@@ -58,7 +64,11 @@ class Contact extends React.Component {
             wbmcintyre@outlook.com
           </a>
         </p>
-        <form className={style.contact__form} onSubmit={this.handleSubmit}>
+        <form
+          ref={this.contactFormRef}
+          className={style.contact__form}
+          onSubmit={this.handleSubmit}
+        >
           <div className={style.contact__formSection}>
             <input
               className={style.contact__formInput}

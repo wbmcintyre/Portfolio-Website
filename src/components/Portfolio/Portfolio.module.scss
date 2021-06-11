@@ -1,10 +1,12 @@
 @import "../../styles/config/animations";
 
 .portfolio {
+  width: 100%;
   padding: 3% 10% 5% 10%;
   background-color: #fff;
   position: relative;
   z-index: 10;
+  overflow: hidden;
 
   &__title {
     width: 100%;
@@ -16,6 +18,7 @@
     text-transform: uppercase;
     opacity: 1;
     position: relative;
+    opacity: 0;
 
     &::after {
       content: "";
@@ -26,13 +29,16 @@
       width: 50px;
       height: 4px;
       background-color: currentColor;
+      opacity: 0;
     }
 
     &Animate {
       animation: moveInRight 1s ease-out;
+      opacity: 1;
 
       &::after {
         animation: moveInRightAfter 2s ease-out;
+        opacity: 1;
       }
     }
   }
@@ -44,9 +50,8 @@
     grid-row-gap: 2rem;
 
     & > * {
-      width: 100%;
-      height: 100%;
-      overflow: none;
+      min-width: 100%;
+      min-height: 100%;
     }
   }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./Project.module.scss";
+import { applyLoadAnimation } from "../intersectionObserver";
 
 class Project extends React.Component {
   constructor(props) {
@@ -8,21 +9,7 @@ class Project extends React.Component {
   }
 
   componentDidMount() {
-    const applyLoadAnimations = (entries, observer) => {
-      const [entry] = entries;
-      if (!entry.isIntersecting) return;
-
-      this.projectRef.current.classList.add(style.projectAnimate);
-
-      observer.unobserve(entry.target);
-    };
-
-    const projectObserver = new IntersectionObserver(applyLoadAnimations, {
-      root: null,
-      threshold: 0,
-    });
-
-    projectObserver.observe(this.projectRef.current);
+    applyLoadAnimation(this.projectRef, style.projectAnimate);
   }
 
   render() {
