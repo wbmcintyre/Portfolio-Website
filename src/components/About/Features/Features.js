@@ -8,22 +8,22 @@ import { ReactComponent as IconResponsive } from "../../../img/responsive.svg";
 
 const features = [
   {
-    icon: <IconMeter width="50%" height="50%" />,
+    icon: <IconMeter className={style.features__icon} />,
     title: "Efficient",
     description: "Time and space efficiency for application development",
   },
   {
-    icon: <IconHeart width="50%" height="50%" />,
+    icon: <IconHeart className={style.features__icon} />,
     title: "Engaging",
     description: "Appealing to look at and enjoyable to interact with",
   },
   {
-    icon: <IconResponsive width="50%" height="50%" />,
+    icon: <IconResponsive className={style.features__icon} />,
     title: "Responsive",
     description: "Adaptive UI/UX for phones, tablets, and PCs.",
   },
   {
-    icon: <IconTouch width="50%" height="50%" />,
+    icon: <IconTouch className={style.features__icon} />,
     title: "Coherent",
     description: "Easily used with intuitive functionality",
   },
