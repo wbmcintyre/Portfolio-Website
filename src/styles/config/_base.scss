@@ -1,3 +1,5 @@
+@import "mixins";
+
 $color-body: #999;
 // $color-highlight-background: #000;
 // $color-highlight-text: #fff;
@@ -13,20 +15,19 @@ $color-body: #999;
 html {
   font-size: 62.5%; //1rem = 10px
   scroll-behavior: smooth;
-  //   @include respond(tab-land) {
-  //     font-size: 56.25%; //1rem = 9px
-  //   }
-  //   @include respond(tab-port) {
-  //     font-size: 50%; //1rem = 8px
-  //   }
-  //   /*
-  //   @include respond(phone) {
-  //     font-size: 30%;  //1rem = 4.8px
-  //   };
-  // */
-  //   @include respond(big-desktop) {
-  //     font-size: 75%; //1rem = 12px
-  //   }
+
+  @include respond(tab-land) {
+    font-size: 56.25%; //1rem = 9px
+  }
+  @include respond(tab-port) {
+    font-size: 50%; //1rem = 8px
+  }
+  @include respond(phone) {
+    font-size: 30%; //1rem = 4.8px
+  }
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12px
+  }
 }
 
 body {

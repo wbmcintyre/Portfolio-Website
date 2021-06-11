@@ -1,11 +1,14 @@
+@import "../../../styles/config/mixins";
+
 .features {
-  display: flex;
-  justify-content: space-around;
-  padding: 3% 10%;
-  background-color: #eee;
-  color: #000;
-  font-weight: 400;
-  font-family: "Merriweather", serif;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  padding: 3% 0;
+
+  @include respond(tab-port) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   & > * {
     width: 100%;

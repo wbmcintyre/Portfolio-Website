@@ -31,9 +31,10 @@
   }
 
   &__bar {
-    height: 25px;
+    height: 3rem;
     width: 100%;
     display: flex;
+
     border-radius: 2px;
     overflow: hidden;
     color: #fff;
@@ -45,7 +46,7 @@
       justify-content: center;
       font-size: 1.5rem;
       font-weight: 900;
-      flex: 0 0 100px; //whatever fixed with based on names
+      flex: 0 0 15rem; //whatever fixed with based on names
       background-color: #4e5df2;
     }
 

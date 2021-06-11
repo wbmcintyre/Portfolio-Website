@@ -13,6 +13,11 @@ const features = [
     description: "Time and space efficiency for application development",
   },
   {
+    icon: <IconHeart width="50%" height="50%" />,
+    title: "Engaging",
+    description: "Appealing to look at and enjoyable to interact with",
+  },
+  {
     icon: <IconResponsive width="50%" height="50%" />,
     title: "Responsive",
     description: "Adaptive UI/UX for phones, tablets, and PCs.",
@@ -21,11 +26,6 @@ const features = [
     icon: <IconTouch width="50%" height="50%" />,
     title: "Coherent",
     description: "Easily used with intuitive functionality",
-  },
-  {
-    icon: <IconHeart width="50%" height="50%" />,
-    title: "Engaging",
-    description: "Appealing to look at and enjoyable to interact with",
   },
 ];
 
