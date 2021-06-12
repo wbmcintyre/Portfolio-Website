@@ -1,4 +1,5 @@
 @import "../../../styles/config/animations";
+@import "../../../styles/config/mixins";
 
 .contact {
   display: flex;
@@ -72,6 +73,10 @@
       flex-direction: column;
       align-items: center;
       width: 50%;
+
+      @include respond(tab-port) {
+        width: 100%;
+      }
     }
 
     &Label {

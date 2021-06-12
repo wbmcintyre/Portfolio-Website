@@ -3,11 +3,17 @@
 
 .portfolio {
   width: 100%;
-  padding: 3% 10% 5% 10%;
+  padding: 3% 10%;
+  padding-bottom: calc(3% + 6rem);
   background-color: #fff;
   position: relative;
   z-index: 10;
   overflow: hidden;
+
+  @include respond(tab-port) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 
   &__title {
     width: 100%;
@@ -51,13 +57,16 @@
     grid-row-gap: 1rem;
 
     & > * {
-      min-width: 100%;
-      min-height: 100%;
+      width: 100%;
       border: 1px solid #000;
     }
 
     @include respond(tab-port) {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(phone) {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 }

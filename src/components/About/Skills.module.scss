@@ -1,10 +1,11 @@
 @import "../../styles/config/animations";
+@import "../../styles/config/mixins";
 
 .skills {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3% 10%;
+  padding: 3% 0%;
   text-transform: uppercase;
 
   &__title {
