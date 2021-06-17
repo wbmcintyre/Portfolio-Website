@@ -4,6 +4,7 @@
   width: 100%;
   height: 5rem;
   background-color: #000; //rgb(120, 120, 120);
+  z-index: 1000;
   transition: all 0.5s;
 
   &__container {
@@ -24,7 +25,6 @@
   }
 
   &__link,
-  &__link:active,
   &__link:visited {
     position: relative;
     text-decoration: none;

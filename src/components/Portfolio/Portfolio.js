@@ -4,6 +4,7 @@ import Project from "./Project";
 import portfolioImage from "../../img/PortfolioWebsite.png";
 import recipeImage from "../../img/FoodApp.png";
 import streamingImage from "../../img/StreamWebsite.png";
+import robotImage from "../../img/robotSlam.png";
 import { applyLoadAnimation } from "../intersectionObserver";
 
 const Projects = [
@@ -11,7 +12,7 @@ const Projects = [
     name: "Portfolio Website",
     about: "React / SASS",
     image: portfolioImage,
-    src: "https://github.com/wbmcintyre",
+    src: "https://github.com/wbmcintyre/Portfolio-Website",
   },
   {
     name: "Streaming Web App",
@@ -24,6 +25,12 @@ const Projects = [
     about: "Javascript",
     image: recipeImage,
     src: "https://github.com/wbmcintyre/Recipe-Search-App",
+  },
+  {
+    name: "Robot Localization",
+    about: "C++",
+    image: robotImage,
+    src: "https://github.com/wbmcintyre/fastslam",
   },
 ];
 class Portfolio extends React.Component {
